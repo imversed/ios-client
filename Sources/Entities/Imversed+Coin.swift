@@ -24,6 +24,15 @@ public extension Imversed {
     
 }
 
+public extension Imversed.Coin.Value {
+    
+    init?(string: String) {
+        let sanitized = string.replacingOccurrences(of: ",", with: ".")
+        self.init(string: sanitized, locale: nil)
+    }
+    
+}
+
 extension Imversed.Coin: Comparable {
     
     public static func < (lhs: Self, rhs: Self) -> Bool {
