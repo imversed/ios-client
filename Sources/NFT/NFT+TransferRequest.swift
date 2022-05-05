@@ -13,9 +13,9 @@ public extension NFT {
         private let doNotModifyValue = "[do-not-modify]"
         
         let token: Imversed.Token
-        let recipient: Wallet.Address
+        let recipient: Wallet.CosmAddress
         
-        public init(token: Imversed.Token, recipient: Wallet.Address) {
+        public init(token: Imversed.Token, recipient: Wallet.CosmAddress) {
             self.token = token
             self.recipient = recipient
         }

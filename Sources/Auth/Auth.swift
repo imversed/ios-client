@@ -17,7 +17,7 @@ struct Auth {
 extension Auth {
     
     struct Account {
-        let address: Wallet.Address
+        let address: Wallet.CosmAddress
         let number: UInt64
         let sequence: UInt64
     }

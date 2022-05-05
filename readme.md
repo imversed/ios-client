@@ -78,11 +78,15 @@ Default values for all of this operations is `price = 0.001` and `limit = 200_00
 ```swift
 let mnemonic: Wallet.Mnemonic = Wallet.generateMnemonic()
 ```
-after that you could obtain an address that correspond to `mnemonic` with:
+after that you could obtain a Cosmos based address that correspond to `mnemonic` with:
 ```swift
-let address: Wallet.Address? = mnemonic.address
+let address: Wallet.CosmAddress? = mnemonic.address
 // or
-let address: Wallet.Address = try mnemonic.getAddress()
+let address: Wallet.CosmAddress = try mnemonic.getCosmosAddress()
+```
+or Etherium based address with:
+```swift
+let eth: Wallet.EthAddress = mnemonic.ethAddress
 ```
 mnemonic key could be restored with an array of words:
 ```swift

@@ -9,7 +9,8 @@ import Foundation
 import HDWalletKit
 
 public struct Wallet {
-    public typealias Address = String
+    public typealias CosmAddress = String
+    public typealias EthAddress = String
     
     private init() { }
 }

@@ -90,7 +90,7 @@ public extension NFT {
     }
     
     static func queryTokens(
-        address: Wallet.Address,
+        address: Wallet.CosmAddress,
         denom: Imversed.Token.Denom,
         skip: Int = 0,
         limit: Int = 30,
@@ -114,7 +114,7 @@ public extension NFT {
     }
     
     private static func queryTokenIds(
-        address: Wallet.Address,
+        address: Wallet.CosmAddress,
         denom: Imversed.Token.Denom,
         skip: UInt64 = 0,
         limit: UInt64 = 30,

@@ -25,7 +25,7 @@ public extension Bank {
         completion: @escaping (Result<Imversed.Coin, Error>) -> Void
     ) {
         do {
-            let address = try mnemonic.getPublicAddress()
+            let address = try mnemonic.getCosmosAddress()
             self.queryBalance(address: address, denom: denom, completion: completion)
         } catch {
             completion(.failure(error))
@@ -33,7 +33,7 @@ public extension Bank {
     }
     
     static func queryBalance(
-        address: Wallet.Address,
+        address: Wallet.CosmAddress,
         denom: Imversed.Coin.Denom,
         completion: @escaping (Result<Imversed.Coin, Error>) -> Void
     ) {

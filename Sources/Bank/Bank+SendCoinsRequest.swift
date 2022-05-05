@@ -12,10 +12,10 @@ public extension Bank {
     
     final class SendRequest: TxMessage {
         let coins: Imversed.Coin
-        let owner: Wallet.Address
-        let recipient: Wallet.Address
+        let owner: Wallet.CosmAddress
+        let recipient: Wallet.CosmAddress
         
-        public init(coins: Imversed.Coin, owner: Wallet.Address, recipient: Wallet.Address) {
+        public init(coins: Imversed.Coin, owner: Wallet.CosmAddress, recipient: Wallet.CosmAddress) {
             self.coins = coins
             self.owner = owner
             self.recipient = recipient

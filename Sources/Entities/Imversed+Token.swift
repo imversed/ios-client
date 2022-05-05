@@ -17,7 +17,7 @@ public extension Imversed {
         public let denom: Denom
         public let name: String
         public let url: URL
-        public let owner: Wallet.Address
+        public let owner: Wallet.CosmAddress
         public let payload: [String: Any]
         
         public init(
@@ -25,7 +25,7 @@ public extension Imversed {
             denom: Denom,
             name: String,
             url: URL,
-            owner: Wallet.Address,
+            owner: Wallet.CosmAddress,
             payload: [String: Any]
         ) {
             self.id = id
