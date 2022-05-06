@@ -366,11 +366,11 @@ private extension Tx {
     }
     
     static func signerInfo(publicKey: Data, sequence: UInt64, legacy: Bool = false) -> Cosmos_Tx_V1beta1_SignerInfo {
-        let pub = Cosmos_Crypto_Secp256k1_PubKey.with {
+        let pub = Ethermint_Crypto_V1_Ethsecp256k1_PubKey.with({
             $0.key = publicKey
-        }
+        })
         let pubKey = Google_Protobuf_Any.with({
-            $0.typeURL = "/cosmos.crypto.secp256k1.PubKey"
+            $0.typeURL = "/ethermint.crypto.v1.ethsecp256k1.PubKey"
             $0.value = try! pub.serializedData()
         })
         let single = Cosmos_Tx_V1beta1_ModeInfo.Single.with {
@@ -421,7 +421,7 @@ private extension Tx {
     }
     
     static func grpcByteSingleSignature(_ privateKey: Data, _ toSignByte: Data) -> Data {
-        let hash = toSignByte.sha256()
+        let hash = HDWalletKit.Crypto.sha3keccak256(data: toSignByte)
         let signedData = try! ECDSA.compactsign(hash, privateKey: privateKey)
         return signedData
     }

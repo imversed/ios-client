@@ -90,6 +90,12 @@ private extension Auth {
             ).baseVestingAccount.baseAccount
             
             return Account(address: auth.address, number: auth.accountNumber, sequence: auth.sequence)
+        } else if (typeUrl.contains(Ethermint_Types_V1_EthAccount.protoMessageName)) {
+            let auth = try Ethermint_Types_V1_EthAccount(
+                serializedData: accountData
+            ).baseAccount
+            
+            return Account(address: auth.address, number: auth.accountNumber, sequence: auth.sequence)
         } else {
             throw Imversed.Error.malformedData
         }
