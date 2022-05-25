@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name = "Imversed"
   spec.summary = spec.name + " iOS Swift client for Imversed blockchain."
-  spec.version = "0.3.2"
+  spec.version = "0.3.3"
   
   spec.source = { :git => 'https://github.com/imversed/ios-client.git', :tag => spec.version }
   
